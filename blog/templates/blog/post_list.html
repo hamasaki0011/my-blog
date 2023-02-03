@@ -3,22 +3,17 @@
         <title>My blog referenced to Django Girls</title>
     </head>
     <body>
-        
         <div>
             <h1><a href="">My first Blog</a></h1>
         </div>
         
+        {% for post in posts %}
         <div>
-            <p>published: 02.02.2023, 16:58</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Guten tag!</p>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-        
-        <div>
-            <p>revieled: 2023/2/3, 17:01</p>
-            <h2><a href="">My 2nd post</a></h2>
-            <p>Hi!</p>
-        </div>
+        {% endfor %}
 
     </body>
 </html>
